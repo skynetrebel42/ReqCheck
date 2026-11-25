@@ -100,10 +100,11 @@ export const TUTORIAL_STEPS = [
         target: '[data-tour="root-expand-control"]',
         focusGraphCourseId: "COMPSCI161",
         title: "Expand and collapse prerequisites",
-        description: "The arrow on a course node reveals or hides its prerequisite branch. Use the highlighted arrow on COMPSCI 161 to try both states.",
+        description: "The arrow on a course node reveals or hides its prerequisite branch. Use the highlighted COMPSCI 161 arrow or the button below to try both states.",
         placement: "left",
         task: {
             prompt: "Try collapsing and expanding the branch in either order.",
+            targetButtonLabel: "Toggle prerequisites",
             anyOrder: true,
             actions: [
                 {

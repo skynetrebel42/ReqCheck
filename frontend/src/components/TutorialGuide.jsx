@@ -516,6 +516,15 @@ export default function TutorialGuide({ open, onExit, onFinish }) {
                             );
                         })}
                     </ul>
+                    {step.task.targetButtonLabel && (
+                        <button
+                            className="tutorial-text-button tutorial-task-button"
+                            type="button"
+                            onClick={() => document.querySelector(step.target)?.click()}
+                        >
+                            {step.task.targetButtonLabel}
+                        </button>
+                    )}
                     <div className={`tutorial-task-status${taskComplete ? " complete" : ""}`} aria-live="polite">
                         {taskComplete ? "Nice work! You can continue." : "Complete the actions above to unlock Next."}
                     </div>
@@ -523,32 +532,30 @@ export default function TutorialGuide({ open, onExit, onFinish }) {
             )}
             </div>
             <div className="tutorial-footer">
-            <button
-                className="tutorial-text-button"
-                type="button"
-                onClick={onFinish}
-            >
-                Skip tutorial
-            </button>
-            <div className="tutorial-progress" aria-label={`Step ${stepIndex + 1} of ${TUTORIAL_STEPS.length}`}>
-                {TUTORIAL_STEPS.map((_, index) => (
-                <span
-                    key={index}
-                    className={index === stepIndex ? "active" : index < stepIndex ? "complete" : ""}
-                />
-                ))}
-            </div>
-            <div className="tutorial-navigation">
-                {!isFirstStep && (
-                <button className="tutorial-back-button" type="button" onClick={goBack}>
-                    Back
-                </button>
-                )}
-                <button className="tutorial-next-button" type="button" onClick={goNext} disabled={!taskComplete}>
-                {step.buttonLabel ?? (isLastStep ? "Finish" : "Next")}
-                <span aria-hidden="true">→</span>
-                </button>
-            </div>
+                <div className="tutorial-progress" role="img" aria-label={`Step ${stepIndex + 1} of ${TUTORIAL_STEPS.length}`}>
+                    {TUTORIAL_STEPS.map((_, index) => (
+                        <span
+                            key={index}
+                            className={index === stepIndex ? "active" : index < stepIndex ? "complete" : ""}
+                        />
+                    ))}
+                </div>
+                <div className="tutorial-footer-actions">
+                    <button className="tutorial-text-button" type="button" onClick={onFinish}>
+                        Skip tutorial
+                    </button>
+                    <div className="tutorial-navigation">
+                        {!isFirstStep && (
+                            <button className="tutorial-back-button" type="button" onClick={goBack}>
+                                Back
+                            </button>
+                        )}
+                        <button className="tutorial-next-button" type="button" onClick={goNext} disabled={!taskComplete}>
+                            {step.buttonLabel ?? (isLastStep ? "Finish" : "Next")}
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     );

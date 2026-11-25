@@ -17,6 +17,9 @@
 .tutorial-card {
     position: fixed;
     z-index: 9001;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 32px);
     box-sizing: border-box;
     width: min(360px, calc(100vw - 32px));
     padding: 18px 18px 13px;
@@ -30,6 +33,7 @@
 
 .tutorial-card-inline {
     position: relative;
+    max-height: none;
     margin: 12px auto;
 }
 
@@ -76,6 +80,8 @@
 }
 
 .tutorial-card-content {
+    min-height: 0;
+    overflow-y: auto;
     padding-right: 10px;
 }
 
@@ -113,13 +119,20 @@
 }
 
 .tutorial-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    display: grid;
+    flex-shrink: 0;
+    gap: 8px;
     margin-top: 15px;
     padding-top: 11px;
     border-top: 1px solid #e2e8f0;
+}
+
+.tutorial-footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .tutorial-text-button,
@@ -141,6 +154,7 @@
 
 .tutorial-progress {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 5px;
@@ -195,15 +209,6 @@
     .tutorial-card {
         width: min(350px, calc(100vw - 24px));
         padding: 17px 14px 12px;
-    }
-
-    .tutorial-footer {
-        flex-wrap: wrap;
-    }
-
-    .tutorial-progress {
-        order: 3;
-        width: 100%;
     }
 }
 
@@ -276,6 +281,14 @@
     border-color: #36a36c;
     background: #e4f6eb;
     color: #187344;
+}
+
+.tutorial-task-button {
+    margin-top: 8px;
+    padding: 6px 9px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    white-space: normal;
 }
 
 .tutorial-task-status {
