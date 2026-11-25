@@ -45,7 +45,7 @@ function CourseDetails({courseId, courseProgress, expandPrerequisites}){
         <>
         <div id="course-details-container">
             <header id="course-detail-header">
-                <img className="course-logo" src="/images/logo.png" alt="" />
+                <img className="course-logo" src={`${import.meta.env.BASE_URL}images/reqcheck-badge.png`} alt="" />
                 <div className="course-heading">
                     <span className="course-code">{course.department} {course.course_number}</span>
                     <h2>{course.title}</h2>

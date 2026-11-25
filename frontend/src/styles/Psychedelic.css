@@ -1,0 +1,71 @@
+html[data-palette="psychedelic"] {
+    color-scheme: dark;
+    --req-blue: #ff9ee0;
+    --req-navy: #fff0ff;
+    --req-gold: #f3ff99;
+    --req-secondary: #65f4e2;
+    --req-focus: #f9ffa0;
+    --req-success: #a4ffad;
+    --req-caution: #ffd68e;
+    --req-ink: #fff0ff;
+    --req-muted: #e5d0ff;
+    --req-border: #a97ade;
+    --req-surface: #27124b;
+    --req-page: #29104b;
+    --req-tint: #422060;
+    --req-canvas: #2f1555;
+    --req-canvas-grid: #b98deb;
+    --req-contrast-grid: #64449a;
+    --req-canvas-edge: #79eee7;
+    --req-quarter-fall: #ff71d3;
+    --req-quarter-winter: #65f4e2;
+    --req-quarter-spring: #baff9b;
+    --req-quarter-summer: #ffd37a;
+    --req-shadow: 0 10px 28px #1d073a70;
+    --theme-button-ink: #2b103b;
+    --theme-danger: #ffc2d0;
+    --theme-progress-surface: #583229;
+    --theme-missing-surface: #561d43;
+    --theme-header-art: linear-gradient(105deg, #421a85, #71236a 47%, #17576c);
+    --theme-page-art:
+        radial-gradient(ellipse at 6% 10%, #923591 0%, transparent 48%),
+        radial-gradient(ellipse at 95% 28%, #116e79 0%, transparent 51%),
+        linear-gradient(150deg, #471d86, #29104b 60%, #663176);
+    --theme-logo-filter: hue-rotate(252deg) saturate(1.6) brightness(1.13);
+    --theme-icon-filter: invert(94%);
+}
+
+[data-palette="psychedelic"] :is(.workspace-search, .workspace-panel, .saved-card, .planner-year, .welcome-guided) {
+    background: linear-gradient(130deg, #402066, #251445 75%);
+}
+
+[data-palette="psychedelic"] .welcome-step:nth-child(4n + 2),
+[data-palette="psychedelic"] .profile-card:nth-child(2) {
+    background: linear-gradient(130deg, #174954, #242045);
+}
+
+[data-palette="psychedelic"] .welcome-step:nth-child(4n + 3),
+[data-palette="psychedelic"] .saved-card:nth-child(even) {
+    background: linear-gradient(130deg, #542052, #301d52);
+}
+
+[data-palette="psychedelic"] :is(.welcome-step:nth-child(4n), .graph-course-list) {
+    background: linear-gradient(130deg, #403069, #193b4c);
+}
+
+[data-palette="psychedelic"] .quarter-header {
+    background: color-mix(in srgb, var(--quarter-color) 22%, #291445);
+}
+
+[data-palette="psychedelic"] #graph-container:not(.high-contrast) #graph-card {
+    background: radial-gradient(ellipse at 95% 4%, #194a61, transparent 60%),
+        linear-gradient(130deg, #49226d, #29144c 52%, #52214d);
+}
+
+[data-palette="psychedelic"] #graph-container.high-contrast #graph-card {
+    background: #130c25;
+}
+
+[data-palette="psychedelic"] #graph-card :is(.course-node-container, .logic-node, .info-node) {
+    background: #2b1850;
+}

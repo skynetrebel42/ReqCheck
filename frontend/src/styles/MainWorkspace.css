@@ -212,18 +212,6 @@
   color: #fff;
 }
 
-[data-palette="matrix"] #graph-card .zoom-btn {
-  color: #eaffef;
-}
-
-[data-palette="matrix"] #graph-container:not(.high-contrast) #legend-container {
-  --graph-edge: #2a644b;
-}
-
-[data-palette="matrix"] #graph-container:not(.high-contrast) {
-  --graph-focus-edge: #57e797;
-}
-
 .high-contrast #graph-card .zoom-btn {
   color: #fff;
 }

@@ -4,8 +4,9 @@ const PROFILE_KEY = "reqcheck.profile.v1";
 
 export const PALETTES = [
     {id: "uci", name: "UCI Blue & Gold", swatches: ["#002244", "#255799", "#fecc07"]},
-    {id: "matrix", name: "Matrix", swatches: ["#081c13", "#166345", "#57e797"]},
+    {id: "matrix", name: "Matrix", swatches: ["#030704", "#145329", "#4dff79"]},
     {id: "pastel", name: "Pastel", swatches: ["#e9ddfa", "#caeae3", "#ffdbdf"]},
+    {id: "psychedelic", name: "Psychedelic", swatches: ["#301269", "#ff71d3", "#65f4e2", "#edff83"]},
     {id: "rainbow", name: "Rainbow", swatches: ["#7142bf", "#d94e81", "#ffa72e", "#33b589", "#3698db"]},
 ];
 

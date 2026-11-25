@@ -23,28 +23,6 @@
     --req-shadow: 0 10px 25px rgb(0 34 68 / 7%);
 }
 
-[data-palette="matrix"] {
-    --req-blue: #166345;
-    --req-navy: #081c13;
-    --req-gold: #57e797;
-    --req-secondary: #238653;
-    --req-focus: #25965f;
-    --req-success: #32b56d;
-    --req-ink: #16362a;
-    --req-muted: #415f51;
-    --req-border: #c4ddcf;
-    --req-surface: #fbfffc;
-    --req-page: #e8f5ed;
-    --req-tint: #daf0e3;
-    --req-canvas: #0c2218;
-    --req-canvas-grid: #345346;
-    --req-canvas-edge: #9ec6af;
-    --req-quarter-fall: #6ead54;
-    --req-quarter-winter: #2b8f78;
-    --req-quarter-spring: #3dbf73;
-    --req-quarter-summer: #8ab948;
-}
-
 [data-palette="pastel"] {
     --req-blue: #654d9a;
     --req-navy: #3c365c;

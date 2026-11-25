@@ -688,7 +688,7 @@ function MainWorkspace({ courseProgress, program, onProgramChange, tutorialActiv
                     >
                       <Background
                         variant={highContrast ? BackgroundVariant.Lines : BackgroundVariant.Dots}
-                        color={highContrast ? "#354154" : "var(--req-canvas-grid)"}
+                        color={highContrast ? "var(--req-contrast-grid, #354154)" : "var(--req-canvas-grid)"}
                         gap={highContrast ? 24 : undefined}
                       />
                       <Panel position="bottom-center">

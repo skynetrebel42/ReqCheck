@@ -1,0 +1,238 @@
+html[data-palette="matrix"] {
+    color-scheme: dark;
+    --req-blue: #4dff79;
+    --req-navy: #abffb5;
+    --req-gold: #78ff93;
+    --req-secondary: #42e96d;
+    --req-focus: #90ffa4;
+    --req-success: #4dff79;
+    --req-caution: #c8ff96;
+    --req-ink: #94ffa8;
+    --req-muted: #82cb8f;
+    --req-border: #326845;
+    --req-surface: #0a160e;
+    --req-page: #020603;
+    --req-tint: #102a19;
+    --req-canvas: #030904;
+    --req-canvas-grid: #235330;
+    --req-contrast-grid: #2c6e3d;
+    --req-canvas-edge: #69dc82;
+    --req-quarter-fall: #a1e877;
+    --req-quarter-winter: #45dba0;
+    --req-quarter-spring: #4dff79;
+    --req-quarter-summer: #c4f471;
+    --req-shadow: 0 9px 24px #0008;
+    --theme-button-ink: #031107;
+    --theme-danger: #b7ffcb;
+    --theme-progress-surface: #1a2b12;
+    --theme-missing-surface: #102216;
+    --theme-page-art: repeating-linear-gradient(0deg, transparent 0 3px, #4dff790a 3px 4px);
+    --theme-header-art: linear-gradient(125deg, #020804, #112e1b);
+    --theme-logo-filter: grayscale(1) sepia(1) saturate(3.4) hue-rotate(72deg) brightness(1.05);
+    --theme-icon-filter: var(--theme-icon-filter);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) body {
+    font-weight: 500;
+    background-image: var(--theme-page-art);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(h1, h2, h3, #app-name, .course-code, .quarter-term) {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-weight: 800;
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(#header, .welcome-hero, #course-detail-header) {
+    background: var(--theme-header-art);
+    color: var(--req-ink);
+    box-shadow: inset 0 -1px var(--req-border);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.nav-item, #logo-app-name-container, #course-detail-header .course-subtitle,
+    .welcome-hero p, .welcome-secondary, .search-results span, .saved-courses, .graph-contrast) {
+    color: var(--req-ink);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(#app-name, #course-detail-header .course-code) {
+    color: var(--req-blue);
+    text-shadow: 0 0 12px color-mix(in srgb, var(--req-blue) 42%, transparent);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.nav-item[aria-current="page"], .welcome-primary, .welcome-guided-button,
+    .profile-save, .transcript-trigger, .transcript-actions button.transcript-primary, .viewer-button,
+    .confirm-dialog-confirm, .tutorial-next-button:not(:disabled), .tutorial-step-number,
+    .saved-toggle-group button[aria-pressed="true"], .orientation-toggle > button.active,
+    .graph-course-list button[aria-pressed="true"], .program-options button:not(:disabled)) {
+    background: var(--req-blue);
+    color: var(--theme-button-ink);
+    border-color: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.search-results, .graph-course-list button, .orientation-toggle,
+    .orientation-toggle > button:not(.active), .workspace-message, .program-controls,
+    .program-toolbar select, .saved-card, .saved-courses select, .planner-year,
+    .planner-course-container, .planner-course, #add-year, #course-detail-panel,
+    #course-detail-actions, .course-facts, .course-disclosure, .schedule-table,
+    .schedule-heading select, .schedule-retry, .viewer-target select, .viewer-bookmark,
+    .restriction-tooltip, .transcript-dialog, .transcript-dialog thead th,
+    .transcript-actions button:not(.transcript-primary), .confirm-dialog,
+    .tutorial-card, .tips-panel, .select-option-container, .select-button) {
+    background: var(--req-surface);
+    color: var(--req-ink);
+    border-color: var(--req-border);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.search-results li:hover, .search-results li[aria-selected="true"],
+    .graph-course-list button:hover:not([aria-pressed="true"]), .orientation-toggle > button:hover:not(.active),
+    .planner-course-open:hover, .quarter.drag-over .quarter-header, .course-disclosure > summary:hover,
+    .schedule-table thead, .restriction-badge button, .transcript-dialog .transcript-summary,
+    .transcript-dialog .transcript-privacy, .confirm-dialog-cancel, .tutorial-task, .tutorial-card .tutorial-note,
+    .tutorial-task-check, .tutorial-next-button:disabled, .tips-close:hover, .tip-item, .tips-reminder,
+    .select-button:hover) {
+    background: var(--req-tint);
+    color: var(--req-ink);
+    border-color: var(--req-border);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.course-description, .course-fact dd, .course-fact dd.course-catalog,
+    .course-restrictions, .tutorial-card h2, .tutorial-card p, .tutorial-task-list li,
+    .tutorial-task-status, .tips-panel-header h2, .tips-section summary, .tip-item h3, .tips-reminder strong) {
+    color: var(--req-ink);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.planned-empty, .planned-units, .planner-year-meta,
+    .course-fact dt, .course-data-note, .course-details-message, .course-disclosure-meta:not(.missing-count),
+    .prerequisite-articulation, .tutorial-close, .tips-close, .tips-reminder p) {
+    color: var(--req-muted);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.schedule-cancelled, #planner-notice, .remove-year, .transcript-error,
+    .course-disclosure-meta.missing-count) {
+    color: var(--theme-danger);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.program-controls a, .course-disclosure a, .tutorial-eyebrow,
+    .tutorial-back-button, .tutorial-text-button, .tutorial-task-heading, .tips-eyebrow,
+    .tips-section summary::after) {
+    color: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.tutorial-progress span.active, .tutorial-progress span.complete) {
+    background: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) .tutorial-scrim rect {
+    stroke: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-container {
+    --graph-text: var(--req-ink);
+    --graph-edge: var(--req-canvas-edge);
+    --graph-focus-edge: var(--req-blue);
+    --graph-completed-fill: var(--req-tint);
+    --graph-progress-fill: var(--theme-progress-surface);
+    --graph-neutral-fill: var(--req-surface);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-container #graph-card {
+    border-color: var(--req-border);
+    color: var(--req-ink);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-container #legend-container {
+    --graph-edge: var(--req-canvas-edge);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .zoom-btn {
+    color: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card :is(.course-node-container, .logic-node, .info-node) {
+    background: var(--req-surface);
+    color: var(--req-ink);
+    border-color: var(--req-secondary);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .course-node-container.border-missing {
+    border-color: var(--theme-danger);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .course-node-container.border-in-progress {
+    border-color: var(--req-caution);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .course-node-container.border-unverified {
+    border-color: var(--req-muted);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.completed, .node-eligibility, .node-eligibility.completed,
+    .node-eligibility.eligible, .node-eligibility.unverified) {
+    background: var(--req-tint);
+    color: var(--req-ink);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.in-progress, .node-eligibility.in-progress, .course-disclosure-meta.missing-count) {
+    background: var(--theme-progress-surface);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.in-progress, .node-eligibility.in-progress) {
+    color: var(--req-caution);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) .node-eligibility.missing {
+    background: var(--theme-missing-surface);
+    color: var(--theme-danger);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .branch-toggle img {
+    filter: var(--theme-icon-filter);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) .course-node-container.graph-course-highlighted {
+    box-shadow: 0 0 11px color-mix(in srgb, var(--req-blue) 48%, transparent);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) .select-option-container {
+    color: var(--req-ink) !important;
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) #graph-card .react-flow__handle {
+    background: var(--req-blue);
+    border-color: var(--req-canvas);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.viewer-bookmark:hover, .viewer-bookmark[aria-pressed="true"], .confirm-dialog-cancel:hover) {
+    background: var(--req-tint);
+    color: var(--req-blue);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.confirm-dialog-confirm:hover, .viewer-button:hover, .tutorial-next-button:not(:disabled):hover) {
+    background: var(--req-focus);
+    color: var(--theme-button-ink);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(#logo, .welcome-badge, .course-logo) {
+    filter: var(--theme-logo-filter) drop-shadow(0 0 8px color-mix(in srgb, var(--req-blue) 44%, transparent));
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.program-options button:disabled, .delete-node) {
+    background: var(--req-tint);
+    color: var(--req-ink);
+    border-color: var(--req-border);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.graph-scrollbar, #graph-card .graph-scrollbar) {
+    background: var(--req-tint);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) :is(.graph-scrollbar-thumb, #graph-card .graph-scrollbar-thumb) {
+    background: var(--req-secondary);
+}
+
+:is([data-palette="matrix"], [data-palette="psychedelic"]) .search-attribution {
+    color: var(--req-muted);
+}
+
+[data-palette="matrix"] :is(.course-disclosure-meta.missing-count, .node-eligibility.missing, .transcript-error) {
+    font-weight: 800;
+}
