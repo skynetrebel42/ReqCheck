@@ -1,0 +1,350 @@
+#course-details-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+#course-details-container::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+
+#course-details-container::-webkit-scrollbar-thumb{
+    background-color: #d6d3cc;
+    border-radius: 10px;
+}
+
+.course-details-message{
+    padding: 40px 32px;
+    color: #6f6c66;
+    font-size: 16px;
+}
+
+/* Flat blue banner across the top, same blue and gold as the logo */
+#course-detail-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 72px 28px 32px;
+    background-color: #0b4a9a;
+    color: white;
+}
+
+#course-detail-header .course-logo{
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+}
+
+.course-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+#course-detail-header .course-code{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #f5c000;
+}
+
+#course-detail-header h2{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+}
+
+#course-detail-header .course-subtitle{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+#course-info{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 24px 32px 28px;
+}
+
+.course-description{
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #22201c;
+}
+
+/* Gray table, label column on the left, rows split by thin lines */
+.course-facts{
+    margin: 0;
+    border-radius: 16px;
+    background-color: #efeeea;
+    overflow: hidden;
+}
+
+.course-fact{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 22px;
+}
+
+.course-fact + .course-fact{
+    border-top: 1px solid #dddbd5;
+}
+
+.course-fact dt{
+    padding-top: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #75726b;
+}
+
+.course-fact dd{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #22201c;
+}
+
+.course-fact dd.course-catalog{
+    font-size: 14px;
+    color: #55524c;
+}
+
+/* Small gray line under a prerequisite that wasn't read from AnteaterAPI's data */
+.course-data-note{
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    font-style: italic;
+    color: #75726b;
+}
+
+.requirement-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.requirement-list li + li{
+    margin-top: 6px;
+}
+
+.schedule-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 16px;
+}
+
+.schedule-heading label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.schedule-heading select,
+.schedule-retry {
+    padding: 5px 8px;
+    border: 1px solid #8399b4;
+    border-radius: 6px;
+    background-color: white;
+    color: inherit;
+    font: inherit;
+}
+
+.schedule-retry {
+    cursor: pointer;
+}
+
+.schedule-source {
+    margin: 8px 0 12px;
+    font-size: 13px;
+}
+
+.course-schedule a {
+    color: #06458c;
+    text-decoration: underline;
+}
+
+.schedule-table-scroll {
+    overflow-x: auto;
+    border: 1px solid #d5e0ee;
+    border-radius: 8px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 8px 10px;
+    vertical-align: top;
+}
+
+.schedule-table thead {
+    background-color: #e9f0fa;
+}
+
+.schedule-table tbody tr {
+    border-top: 1px solid #d5e0ee;
+}
+
+.schedule-section-code,
+.schedule-days,
+.schedule-cancelled {
+    display: block;
+}
+
+.schedule-section-code {
+    font-weight: 400;
+}
+
+.schedule-cancelled {
+    color: #9c251e;
+}
+
+.course-disclosure {
+    min-width: 0;
+    border: 1px solid #d5e0ee;
+    border-radius: 12px;
+    background: #f6f9fd;
+    color: #17243a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.course-disclosure > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+}
+
+.course-disclosure > summary::-webkit-details-marker {
+    display: none;
+}
+
+.course-disclosure > summary:hover {
+    background: #e8f0fc;
+}
+
+.course-disclosure[open] > summary svg {
+    transform: rotate(180deg);
+}
+
+.course-disclosure > summary svg {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.course-disclosure-meta {
+    margin-left: auto;
+    color: #405673;
+    font-size: 12px;
+    text-align: right;
+}
+
+.course-disclosure-meta + svg {
+    margin-left: 0;
+}
+
+.course-disclosure-meta.missing-count {
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: #fde8e7;
+    color: #962323;
+}
+
+.course-disclosure-content {
+    padding: 0 16px 16px;
+}
+
+.prerequisite-facts {
+    margin-top: 14px;
+}
+
+.prerequisite-check h4 {
+    margin: 12px 0 4px;
+    font-size: 14px;
+}
+
+.prerequisite-check p {
+    margin: 8px 0 0;
+}
+
+.prerequisite-check-content > ul,
+.prerequisite-check-content li > ul {
+    margin: 4px 0;
+    padding-left: 20px;
+}
+
+.prerequisite-check a {
+    color: #06458c;
+    text-decoration: underline;
+}
+
+.prerequisite-articulation {
+    display: block;
+    margin-top: 3px;
+    color: #405673;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.course-restrictions {
+    color: #19324f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.course-advising {
+    display: grid;
+    justify-items: start;
+    gap: 3px;
+    margin-top: 7px;
+    color: var(--req-muted);
+    font-size: 0.86rem;
+    overflow-wrap: anywhere;
+}
+
+.course-advising a {
+    color: var(--req-blue);
+}
+
+.course-advising-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+}
+
+@media (max-width: 540px) {
+    #course-info {
+        padding: 14px;
+    }
+
+    .course-fact {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3px;
+        padding: 10px 12px;
+    }
+}

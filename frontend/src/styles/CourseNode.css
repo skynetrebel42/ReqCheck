@@ -1,0 +1,239 @@
+.course-node-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: clamp(50px, 120px, 120px);
+    min-height: 50px;
+    padding: 6px 4px;
+    background-color: white;
+    color: #17243a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transform-origin: center;
+}
+
+/* Border color by eligibility (class set in CourseNode.jsx). */
+.course-node-container.border-missing{
+    border: 2px solid #b91c1c;
+}
+
+.course-node-container.border-eligible{
+    border: 2px solid #1d4e9b;
+}
+
+.course-node-container.border-unverified{
+    border: 2px dashed #596273;
+}
+
+.course-node-container.border-in-progress{
+    border: 2px solid #92400e;
+}
+
+.course-node-container.border-completed{
+    border: 2px solid #087454;
+}
+
+.course-node-container:hover{
+    transform: scale(1.06);
+    
+}
+.not-started{
+    background-color: white;
+}
+
+.in-progress{
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.completed{
+    background-color: #d1fae5;
+    color: #065f46;
+}
+.node{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.progress{
+    background-color: transparent;
+    width: fit-content;
+    position: absolute;
+    border-radius: 2px;
+    border: none;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.progress > img{
+    display: block;
+    width: 12px;
+}
+
+.branch-toggle{
+    position: absolute;
+    right: 0;
+    top: 40%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.branch-toggle > img{
+    display: block;
+    width: 10px;
+}
+
+/* Top-down: prerequisites open below, so the arrow sits just inside the bottom
+   edge, in the free space under the eligibility label (node keeps the same size
+   as left-to-right). The images are turned 90deg clockwise (expand > points
+   down, collapse < points up). */
+.orient-top-down .branch-toggle{
+    top: auto;
+    right: auto;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 6px;
+}
+
+.orient-top-down .branch-toggle > img{
+    transform: rotate(90deg);
+}
+#course-id {
+    text-align: center;
+    font: 700 12px system-ui, sans-serif;
+}
+
+.node-eligibility{
+    max-width: 100%;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.node-eligibility.eligible{
+    background-color: #dbeafe;
+    color: #1d4e9b;
+}
+
+.node-eligibility.missing{
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.node-eligibility.completed{
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.node-eligibility.unverified{
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.node-eligibility.in-progress{
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.delete-node{
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid #666;
+    border-radius: 50%;
+    background-color: white;
+    color: #a30000;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.course-node-container:hover .delete-node,
+.react-flow__node.selected .delete-node,
+.delete-node:focus-visible{
+    opacity: 1;
+}
+
+.delete-node:hover{
+    background-color: #fdecea;
+}
+
+button.node-eligibility {
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.course-node-container.graph-course-highlighted {
+    outline: 3px solid var(--graph-focus-edge, var(--req-focus));
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px white;
+}
+
+.high-contrast .course-node-container {
+    border-width: 3px;
+    border-color: #fff;
+    background-color: #fff;
+    color: #111827;
+}
+
+.high-contrast .course-node-container.graph-course-highlighted {
+    outline-width: 4px;
+}
+
+.high-contrast .node-eligibility {
+    box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.high-contrast .node-eligibility.missing {
+    color: #8b1313;
+}
+
+.high-contrast .node-eligibility.eligible,
+.high-contrast .node-eligibility.completed {
+    color: #123471;
+}
+
+.high-contrast .logic-node,
+.high-contrast .info-node {
+    border-width: 3px;
+    border-color: #cbd5e1;
+    background-color: #fff;
+    color: #111827;
+}
+
+.high-contrast .info-node.satisfied {
+    border-color: #087454;
+    color: #065f46;
+}
+
+.high-contrast .react-flow__handle {
+    background-color: #111827;
+    border-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .course-node-container {
+        transition: none;
+    }
+}

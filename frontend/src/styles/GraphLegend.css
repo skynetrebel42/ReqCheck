@@ -1,0 +1,28 @@
+#legend-container {
+    display: grid;
+    gap: 8px;
+    color: var(--req-ink);
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font: 600 0.79rem var(--req-font);
+}
+
+.legend-item svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+}
+
+#dashed-line-icon,
+#straight-line-icon {
+    width: 26px;
+    border-top: var(--graph-line-width, 2px) solid var(--graph-edge, #52657b);
+}
+
+#dashed-line-icon {
+    border-top-style: dashed;
+}

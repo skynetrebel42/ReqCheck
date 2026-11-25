@@ -1,0 +1,247 @@
+.tracker-panel {
+    margin: 24px 0 0 16px;
+}
+
+#sidebar-container {
+    display: grid;
+    gap: 10px;
+}
+
+.tracker-course-group {
+    min-width: 0;
+    border: 1px solid var(--req-border);
+    border-radius: 8px;
+}
+
+.sidebar-label-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 7px;
+    min-height: 22px;
+    color: var(--req-ink);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.sidebar-label-container::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar-label-container svg {
+    transform: rotate(-90deg);
+}
+
+.tracker-course-group[open] .sidebar-label-container svg {
+    transform: none;
+}
+
+.course-counter {
+    margin-left: auto;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: var(--req-tint);
+    color: var(--req-blue);
+    font-variant-numeric: tabular-nums;
+}
+
+.tracked-course-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0 8px 8px;
+    list-style: none;
+}
+
+.tracked-course {
+    max-width: 100%;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.tracker-empty {
+    margin: 0;
+    padding: 0 9px 9px;
+    color: var(--req-muted);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 1050px) {
+    .tracker-panel {
+        margin: 12px 16px 0;
+    }
+}
+
+.transcript-trigger,
+.transcript-actions button {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: #172b4d;
+    font: inherit;
+    cursor: pointer;
+}
+
+.transcript-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding-inline: 7px;
+    border-color: var(--req-blue);
+    background: var(--req-blue);
+    color: white;
+    font-size: 0.81rem;
+    font-weight: 700;
+}
+
+.transcript-trigger:disabled,
+.transcript-actions button:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+
+.transcript-feedback {
+    margin: 8px 0 0;
+    font-size: 0.85rem;
+}
+
+.transcript-dialog {
+    box-sizing: border-box;
+    width: min(690px, calc(100% - 24px));
+    max-height: calc(100% - 24px);
+    padding: 22px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #172b4d;
+}
+
+.transcript-dialog::backdrop {
+    background: rgb(15 23 42 / 55%);
+}
+
+.transcript-dialog h2 {
+    margin: 0 0 12px;
+}
+
+.transcript-dialog p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.transcript-dialog label {
+    display: block;
+    margin-top: 12px;
+}
+
+.transcript-dialog textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 8px;
+    resize: vertical;
+}
+
+.transcript-dialog .transcript-summary,
+.transcript-dialog .transcript-privacy {
+    margin: 12px 0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #f1f5f9;
+}
+
+.transcript-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+}
+
+.transcript-summary > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.transcript-summary > span::before,
+.tracker-course-group summary::after {
+    width: 7px;
+    height: 7px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--status-dot, var(--req-muted));
+    content: "";
+}
+
+.transcript-count-ready,
+.tracker-course-group:first-of-type {
+    --status-dot: var(--req-success);
+}
+
+.transcript-count-alreadyTracked {
+    --status-dot: var(--req-secondary);
+}
+
+.transcript-count-needsReview,
+.tracker-course-group:last-of-type {
+    --status-dot: var(--req-caution);
+}
+
+.transcript-dialog thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+.transcript-table-scroll {
+    max-height: 45vh;
+    overflow: auto;
+}
+
+.transcript-dialog table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+.transcript-dialog th,
+.transcript-dialog td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 8px;
+}
+
+.transcript-dialog input:not([type="file"], [type="checkbox"]) {
+    box-sizing: border-box;
+    width: 8.5rem;
+    padding: 5px;
+}
+
+.transcript-dialog input.transcript-grade:not([type="file"], [type="checkbox"]) {
+    width: 3.5rem;
+}
+
+.transcript-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.transcript-actions button.transcript-primary {
+    border-color: #1d4ed8;
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.transcript-error {
+    color: #a02621;
+}

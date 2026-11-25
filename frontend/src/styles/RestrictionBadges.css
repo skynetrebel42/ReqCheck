@@ -1,0 +1,55 @@
+.restriction-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 6px 0;
+}
+
+.restriction-badge {
+    position: relative;
+    display: inline-flex;
+}
+
+.restriction-badge button {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #a7bad4;
+    border-radius: 7px;
+    background: #e8f0fc;
+    color: #163e72;
+    cursor: help;
+}
+
+.restriction-badge button.restriction-with-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    width: auto;
+    padding: 0 7px;
+    font-size: 12px;
+}
+
+.restriction-tooltip {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 4px);
+    left: 0;
+    width: max-content;
+    max-width: min(180px, 50vw);
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: #192741;
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: normal;
+}
+
+.restriction-badge:hover .restriction-tooltip,
+.restriction-badge:focus-within .restriction-tooltip {
+    display: block;
+}

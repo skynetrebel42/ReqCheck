@@ -1,0 +1,60 @@
+.sources-page {
+    width: min(100%, 960px);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 24px clamp(16px, 3vw, 32px) 32px;
+}
+
+.sources-page h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--req-navy);
+    font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.sources-page > p {
+    margin: 4px 0 16px;
+    color: var(--req-muted);
+}
+
+.sources-page section + section {
+    margin-top: 12px;
+}
+
+.sources-page h2 {
+    margin: 0;
+    color: var(--req-navy);
+    font-size: 1.02rem;
+}
+
+.sources-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sources-list li {
+    padding: 8px 0;
+}
+
+.sources-list li + li {
+    border-top: 1px solid var(--req-border);
+}
+
+.sources-list a {
+    color: var(--req-blue);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.sources-list a svg {
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.sources-list p {
+    margin: 2px 0 0;
+    color: var(--req-muted);
+}
