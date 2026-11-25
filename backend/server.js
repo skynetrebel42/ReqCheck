@@ -1,11 +1,7 @@
-// Imports the app and lets it run locally, should be auto redirected here
-// The frontend dev server forwards /api/ requests to this part, proxy set in frontend/vite.config.js
-
+// Standalone development entry point. Vercel deploys the Express app from app.js.
 import app from "./app.js";
 
-app.listen(3001, () => {
-    console.log("Backend running at http://localhost:3001");
+const port = Number(process.env.PORT ?? 3001);
+app.listen(port, () => {
+    console.log(`Backend running at http://localhost:${port}`);
 });
-
-
-

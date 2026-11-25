@@ -1,11 +1,36 @@
 {
-  "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend",
-  "outputDirectory": "frontend/dist",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "backend": {
+      "root": "backend",
+      "framework": "express",
+      "entrypoint": "app.js",
+      "devCommand": "npm start",
+      "functions": {
+        "app.js": {
+          "includeFiles": "uci_courses.db"
+        }
+      }
+    },
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite",
+      "rewrites": [
+        {
+          "source": "/:page(search|planner|saved|profile|sources)",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  },
   "rewrites": [
-    {"source": "/api/(.*)", "destination": "/api" },
-    {"source": "/((?!api/).*)", "destination": "/index.html"}
-  ],
-  "functions": {
-    "api/index.js": { "includeFiles": "backend/uci_courses.db" }
-  }
+    {
+      "source": "/api/:path*",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "frontend" }
+    }
+  ]
 }
